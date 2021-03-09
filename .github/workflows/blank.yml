@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Task_1
-        run: echo hiiii
+        run: cat /etc/os-release
 
   my_job:
     runs-on: ubuntu-latest
