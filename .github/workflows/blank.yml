@@ -16,4 +16,4 @@ jobs:
       - name: Install Python dependencies
         run: pip3 install -r requirements.txt
       - name: crda-report
-        run: pip3 show flask
+        run: crda analyse --file requirements.txt
