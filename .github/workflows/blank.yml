@@ -12,6 +12,7 @@ jobs:
     container:
       image: quay.io/jparsai/crdaimagev1:latest
     steps:
+      - uses: actions/checkout@v2
       - name: Install Python dependencies
         run: |
           pwd
