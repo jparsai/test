@@ -13,11 +13,7 @@ jobs:
       image: quay.io/jparsai/crdaimagev1:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Python dependencies
+      - name: setup-env
         run: pip3 install -r requirements.txt
       - name: crda-report
-        run: |
-          echo 1----------------------------
-          cat requirements.txt
-          echo 2----------------------------
-          crda analyse /__w/test/test/requirements.txt
+        run: crda analyse /__w/test/test/requirements.txt
