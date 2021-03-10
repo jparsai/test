@@ -12,9 +12,8 @@ jobs:
     container:
       image: quay.io/jparsai/crdaimagev1:latest
     steps:
-      - uses: actions/checkout@v2
-      - name: setup-env
-        run: which python3
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v2
 
   crda-report:
     runs-on: ubuntu-latest
