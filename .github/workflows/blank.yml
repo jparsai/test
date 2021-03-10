@@ -23,4 +23,4 @@ jobs:
           echo 2----------------------------
           cat requirements.txt
           echo 3----------------------------
-          crda analyse requirements.txt
+          crda analyse /__w/test/test/requirements.txt
