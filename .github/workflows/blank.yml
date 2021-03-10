@@ -14,13 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Python dependencies
-        run: |
-          pwd
-          ls -l
-          pip3 install -r requirements.txt
-  crda-report:
-    runs-on: ubuntu-latest
-    container:
-      image: quay.io/jparsai/crdaimagev1:latest
-    steps:
-      - run: cat /etc/os-release
+        run: pip3 install -r requirements.txt
+      - name: crda-report
+        run: pip3 show flask
