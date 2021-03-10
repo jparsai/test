@@ -13,8 +13,7 @@ jobs:
       image: quay.io/jparsai/crdaimagev1:latest
     steps:
       - name: Install Python dependencies
-        uses: py-actions/py-dependency-install@v2
-
+        run: pip install -r requirements.txt
   crda-report:
     runs-on: ubuntu-latest
     container:
