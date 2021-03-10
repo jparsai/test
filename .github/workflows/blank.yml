@@ -17,7 +17,7 @@ jobs:
         run: pip3 install -r requirements.txt
       - name: crda-report
         run: |
-          echo 2----------------------------
+          echo 1----------------------------
           cat requirements.txt
-          echo 3----------------------------
+          echo 2----------------------------
           crda analyse /__w/test/test/requirements.txt
