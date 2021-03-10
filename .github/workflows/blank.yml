@@ -7,16 +7,16 @@ on:
 
   workflow_dispatch:
 jobs:
-  build:
+  setup-env:
     runs-on: ubuntu-latest
-
+    container:
+      image: quay.io/jparsai/crdaimagev1:latest
     steps:
       - uses: actions/checkout@v2
+      - name: setup-env
+        run: which python
 
-      - name: Task_1
-        run: cat /etc/os-release
-
-  my_job:
+  crda-report:
     runs-on: ubuntu-latest
     container:
       image: quay.io/jparsai/crdaimagev1:latest
