@@ -18,6 +18,9 @@ jobs:
       - name: crda-report
         run: |
           pwd
+          echo 1----------------------------
           ls -l
-          crda analyse test/requirements.txt
- 
+          echo 2----------------------------
+          cat requirements.txt
+          echo 3----------------------------
+          crda analyse requirements.txt
