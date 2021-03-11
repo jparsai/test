@@ -20,9 +20,9 @@ jobs:
       - name: setup-env
         run: |
           echo 11------------
-          echo ${{ secrets.AUTH_TOKEN }}
-          echo ${{ secrets.CRDA_KEY }}
-          echo ${{ secrets.HOST }}
+          echo ${AUTH_TOKEN}
+          echo ${CRDA_KEY}
+          echo ${HOST}
           echo 22------------
           pip3 install -r requirements.txt
       - name: crda-report
