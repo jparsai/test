@@ -12,16 +12,16 @@ jobs:
     container:
       image: quay.io/jparsai/crdaimagev1:latest
       env:
-        AUTH_TOKEN: 9e7da76708fe374d8c10fa752e72989f
-        CRDA_KEY: 11b3f460-29ca-42a0-91ce-c1c5ec4a1bf3
-        HOST: https://f8a-analytics-2445582058137.production.gw.apicast.io:443
+        AUTH_TOKEN: 9e7da76708fe374d8c10fa752e72989f_111
+        CRDA_KEY: 11b3f460-29ca-42a0-91ce-c1c5ec4a1bf3_111
+        HOST: https://f8a-analytics-2445582058137.production.gw.apicast.io:443_111
     steps:
       - uses: actions/checkout@v2
       - name: setup-env
         run: |
-          echo AUTH_TOKEN
-          echo CRDA_KEY
-          echo HOST
+          echo $AUTH_TOKEN
+          echo $CRDA_KEY
+          echo $HOST
           pip3 install -r requirements.txt
       - name: crda-report
         run: crda analyse /__w/test/test/requirements.txt
