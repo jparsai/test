@@ -18,6 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: setup-env
-        run: pip3 install -r requirements.txt
+        run: |
+          echo AUTH_TOKEN
+          echo CRDA_KEY
+          echo HOST
+          pip3 install -r requirements.txt
       - name: crda-report
         run: crda analyse /__w/test/test/requirements.txt
