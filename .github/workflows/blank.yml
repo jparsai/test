@@ -21,3 +21,6 @@ jobs:
         run: pip3 install -r requirements.txt
       - name: crda-report
         run: crda analyse /__w/test/test/requirements.txt
+      - name: condition 1
+        if: 1==1
+        run: echo inside----
