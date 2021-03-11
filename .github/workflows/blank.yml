@@ -23,7 +23,7 @@ jobs:
           echo ${AUTH_TOKEN}
           echo ${CRDA_KEY}
           echo ${HOST}
-          echo 22------------
+          echo 232------------
           pip3 install -r requirements.txt
       - name: crda-report
         run: crda analyse /__w/test/test/requirements.txt
