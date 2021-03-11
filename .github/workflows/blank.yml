@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: setup-env
         run: |
-          echo 11------------
+          echo 111------------
           echo ${{ secrets.AUTH_TOKEN }}
           echo ${{ secrets.CRDA_KEY }}
           echo ${{ secrets.HOST }}
