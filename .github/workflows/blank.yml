@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: setup-env
         run: |
-          echo 131------------
+          echo 101------------
           echo ${AUTH_TOKEN}
           echo ${CRDA_KEY}
           echo ${HOST}
