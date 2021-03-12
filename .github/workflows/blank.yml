@@ -21,9 +21,4 @@ jobs:
         run: pip3 install -r requirements.txt
       - name: crda-report
         #run: crda analyse /__w/test/test/requirements.txt
-        run: |
-          pwd
-          ls -l
-          echo /crda.sh
-          source /crda.sh
-          get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 10 result.json
+        run: get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 10 result.json
