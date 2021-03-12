@@ -22,5 +22,7 @@ jobs:
       - name: crda-report
         #run: crda analyse /__w/test/test/requirements.txt
         run: |
-          source crda.sh
+          pwd
+          ls -l
+          source /crda.sh
           get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 10 result.json
