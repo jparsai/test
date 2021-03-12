@@ -20,6 +20,6 @@ jobs:
       #- name: setup-env
       #  run: pip3 install -r requirements.txt
       - name: crda-report
-        run: crda --help
+        run: get_pypi_report
         #run: crda analyse /__w/test/test/requirements.txt
         #run: get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 1 result4.json
