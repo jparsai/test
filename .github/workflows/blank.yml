@@ -24,5 +24,6 @@ jobs:
         run: |
           pwd
           ls -l
+          echo /crda.sh
           source /crda.sh
           get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 10 result.json
