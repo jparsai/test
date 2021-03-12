@@ -22,4 +22,4 @@ jobs:
       - name: crda-report
         run: get_pypi_report
         #run: crda analyse /__w/test/test/requirements.txt
-        #run: get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 10 result4.json
+        #run: get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 1 result4.json
