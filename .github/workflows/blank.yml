@@ -20,7 +20,5 @@ jobs:
       - name: setup-env
         run: pip3 install -r requirements.txt
       - name: crda-report
-        run: crda analyse /__w/test/test/requirements.txt
-      - name: condition 1
-        if: 1==2
-        run: echo inside----
+        #run: crda analyse /__w/test/test/requirements.txt
+        run: get_report / /__w/test/test requirements.txt total_vulnerabilites 10 result.json
