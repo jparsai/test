@@ -17,9 +17,9 @@ jobs:
         HOST: ${{ secrets.HOST }}
     steps:
       - uses: actions/checkout@v2
-      - name: setup-env
-        run: pip3 install -r requirements.txt
+      #- name: setup-env
+      #  run: pip3 install -r requirements.txt
       - name: crda-report
-        run: get_pypi_report
+        run: get_pypi_report_1
         #run: crda analyse /__w/test/test/requirements.txt
         #run: get_pypi_report / /__w/test/test requirements.txt total_vulnerabilites 1 result4.json
