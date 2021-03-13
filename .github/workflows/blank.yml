@@ -15,7 +15,7 @@ jobs:
       - name: crda-report
         run: |
           echo 'hello from function1.'
-          echo 'hello from $MY_NAME'
+          echo 'hello from ${{MY_NAME}}'
           
           with:
             MY_NAME: "testing"
