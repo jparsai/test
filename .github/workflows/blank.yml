@@ -13,8 +13,10 @@ jobs:
       image: quay.io/jparsai/crdaimagev1:latest
     steps:
       - name: crda-report
-        with:
-          MY_NAME: "testing"
-          script: |
-              echo 'hello from function1.'
-              echo 'hello from $MY_NAME'
+        run: |
+          echo 'hello from function1.'
+          echo 'hello from $MY_NAME'
+          
+          with:
+            MY_NAME: "testing"
+          
