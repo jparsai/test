@@ -1,11 +1,6 @@
-psycopg2-binary==2.8.6
 flask==0.11.1
 flask-cors==3.0.2
 requests==2.24.0
 pytest-cov==2.6.0
 pytest==3.10.1
-tenable-jira-cloud==1.1.20
-django-oauth-toolkit==0.8.0
-triage==4.2.0
-critical-path==0.0.9
 pyyaml==5.3.1
