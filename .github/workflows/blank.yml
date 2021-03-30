@@ -15,8 +15,14 @@ jobs:
       - name: crda-report
         run: |
           echo 'hello from function1.'
-          echo 'hello from ${{MY_NAME}}'
           
-          with:
-            MY_NAME: "testing"
+          printf "CRDA Analysis task is being executed.\n"
+          
+          sh /crda_dir/crda.sh 
+          
+          printf "\nCRDA Analysis task is completed."          
+
+          #echo 'hello from ${{MY_NAME}}'          
+          #with:
+          #  MY_NAME: "testing"
           
