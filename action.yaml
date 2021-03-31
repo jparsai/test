@@ -3,5 +3,5 @@ name: "crda-analysis"
 description: "The CRDA Analysis task is an interface between Tekton and Red Hat CodeReady Dependency Analytics platform. It provides vulnerability and compliance analysis for your Python applications dependencies, along with recommendations to address security vulnerabilities and licensing issues."
 runs:
   using: "docker"
-  image: 'docker://quay.io/jparsai/crdaimagev2'
+  image: 'docker://quay.io/jparsai/crdaimagev2:latest'
   post-entrypoint: 'crda_dir/crda.sh'
