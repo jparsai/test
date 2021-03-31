@@ -8,3 +8,4 @@ runs:
     - '11' 
     - '22' 
     - '33' 
+  entrypoint: '/entrypoint.sh'
