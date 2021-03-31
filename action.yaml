@@ -4,7 +4,7 @@ description: "The CRDA Analysis task is an interface between Tekton and Red Hat 
 runs:
   using: "docker"
   image: 'docker://quay.io/jparsai/crdaimagev2:latest'
-  with:
-    m: '1' 
-    o: '2' 
-    p: '3' 
+  ards:
+    - '11' 
+    - '22' 
+    - '33' 
