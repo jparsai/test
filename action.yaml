@@ -5,9 +5,7 @@ runs:
   using: "docker"
   image: 'docker://quay.io/jparsai/crdaimagev2:latest'
   entrypoint: 'entrypoint.sh'
-  with:
-    post-entrypoint: '/crda_dir/crda.sh'
-    args: 
-      - 1 
-      - 2 
-      - 3 
+  args: 
+    - '1' 
+    - '2' 
+    - '3' 
