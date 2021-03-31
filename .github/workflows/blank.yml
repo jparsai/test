@@ -13,8 +13,4 @@ jobs:
       image: quay.io/jparsai/crdaimagev1:latest
     steps:
       - name: crda-report
-        run: |
-          echo 'hello from function1.'
-          printf "CRDA Analysis task is being executed.\n"
-          sh /crda_dir/crda.sh 
-          printf "\nCRDA Analysis task is completed."
+        uses: jparsai/test@master
