@@ -1,15 +1,11 @@
 # action.yaml
 name: "crda-analysis"
 description: "The CRDA Analysis task is an interface between Tekton and Red Hat CodeReady Dependency Analytics platform. It provides vulnerability and compliance analysis for your Python applications dependencies, along with recommendations to address security vulnerabilities and licensing issues."
-inputs:
-  m:
-    default: 'aaa'
-  o:
-    default: 'bbb'
-  p:
-    default: 'ccc'
-
 runs:
   using: "docker"
   image: 'docker://quay.io/jparsai/crdaimagev2:latest'
-  post-entrypoint: '/crda_dir/crda.sh'
+  entrypoint: 'entrypoint.sh'
+    with:
+      post-entrypoint: 'crda_dir/crda.sh'
+      args: 1 2 3 
+
