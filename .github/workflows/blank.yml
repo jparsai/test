@@ -7,10 +7,9 @@ on:
 
   workflow_dispatch:
 jobs:
-  crda-job:
+  custom_test:
     runs-on: ubuntu-latest
-    container:
-      image: quay.io/jparsai/crdaimagev1:latest
+    name: test locally
     steps:
-      - name: crda-report
+      - name: crda test
         uses: jparsai/test@master
