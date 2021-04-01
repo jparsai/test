@@ -5,7 +5,7 @@ runs:
   using: "docker"
   image: 'docker://quay.io/jparsai/crdaimagev2:latest'
   args:
-    - '/__w/test/test/requirements.txt' 
-    - '/__w/test/test/' 
-    - '/__w/test/test/' 
+    - '/test/test/requirements.txt' 
+    - '/test/test/' 
+    - '/test/test/' 
   entrypoint: '/entrypoint.sh'
