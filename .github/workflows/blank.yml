@@ -19,7 +19,7 @@ jobs:
           ls -l
           mkdir /__w/test/test/site-dir
           ls -l
-          pip3 install -r requirements.txt
+          pip3 install --target=/__w/test/test/site-dir -r requirements.txt
           echo ============================================
           pip3 show flask
       - name: crda test
@@ -27,7 +27,7 @@ jobs:
         with:
           manifest-file-path: /github/workspace/requirements.txt
           output-file-path: /github/workspace/result.json
-          pkg-installation-directory-path: /__w/test/test
+          pkg-installation-directory-path: /__w/test/test/site-dir
           image: quay.io/jparsai/crdaimagev2:latest
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
