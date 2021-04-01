@@ -33,5 +33,3 @@ jobs:
       - name: check-dir
         run: |
           ls /__w/test/test
-          pip3 show flask
-
