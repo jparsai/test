@@ -21,7 +21,6 @@ jobs:
           ls -l
           pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
           echo ============================================
-          pip3 show flask
       - name: crda test
         uses: jparsai/test@master
         with:
