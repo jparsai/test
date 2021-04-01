@@ -17,3 +17,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: crda test
         uses: jparsai/test@master
+        with:
+          manifest-file-path: /github/workspace/requirements.txt
+          output-file-path: /github/workspace/result.json
+          pkg-installation-directory-path: /github/workspace
+          image: quay.io/jparsai/crdaimagev2:latest
+          
