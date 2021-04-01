@@ -20,7 +20,7 @@ jobs:
       - name: setup-env
         run: |
           echo 11------------
-          echo pwd
+          pwd
           echo 22------------
           echo ls -l
           echo 33------------
