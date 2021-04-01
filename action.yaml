@@ -8,4 +8,6 @@ runs:
     - '/requirements.txt' 
     - '/test' 
     - '/test' 
+  env:
+    CRDA_KEY: 'CRDA_KEY1'
   entrypoint: '/entrypoint.sh'
