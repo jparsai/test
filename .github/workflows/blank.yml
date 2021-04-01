@@ -7,9 +7,13 @@ on:
 
   workflow_dispatch:
 jobs:
-  custom_test:
+  setup-env:
     runs-on: ubuntu-latest
-    name: test locally
+    container:
+      image: quay.io/jparsai/crdaimagev2:latest
+      env:
+        CRDA_KEY: ${{ secrets.CRDA_KEY }}
     steps:
+      - uses: actions/checkout@v2
       - name: crda test
         uses: jparsai/test@master
