@@ -26,7 +26,7 @@ jobs:
         with:
           manifest-file-path: /github/workspace/requirements.txt
           output-file-path: /github/workspace/result.json
-          pkg-installation-directory-path: /__w/test/test/site-dir
+          pkg-installation-directory-path: /__w/test/test/site-dir/
           image: quay.io/jparsai/crdaimagev2:latest
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
