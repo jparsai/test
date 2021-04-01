@@ -17,9 +17,9 @@ jobs:
         run: |
           pwd
           ls -l
-          mkdir /__w/test/test/site-dir
+          mkdir -p /__w/test/test/site-dir
           ls -l
-          pip3 install --target=/__w/test/test/site-dir -r requirements.txt
+          pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
           echo ============================================
           pip3 show flask
       - name: crda test
