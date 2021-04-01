@@ -16,6 +16,9 @@ jobs:
       - name: setup-env
         run: |
           pwd
+          ls -l
+          mkdir /__w/test/test/site-dir
+          ls -l
           pip3 install -r requirements.txt
           echo ============================================
           pip3 show flask
@@ -24,13 +27,12 @@ jobs:
         with:
           manifest-file-path: /github/workspace/requirements.txt
           output-file-path: /github/workspace/result.json
-          pkg-installation-directory-path: /usr/local/lib64/python3.6/site-packages
+          pkg-installation-directory-path: /__w/test/test
           image: quay.io/jparsai/crdaimagev2:latest
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
       - name: check-dir
         run: |
-          ls /github/workspace/
-          ls /github/workspace/site-dir
+          ls /__w/test/test
           pip3 show flask
 
