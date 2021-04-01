@@ -1,3 +1,4 @@
+
 name: CI
 on:
   push:
@@ -10,22 +11,18 @@ jobs:
   setup-env:
     runs-on: ubuntu-latest
     container:
-      image: quay.io/jparsai/crdaimagev1:latest
-      env:
-        AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
-        CRDA_KEY: ${{ secrets.CRDA_KEY }}
-        HOST: ${{ secrets.HOST }}
+      image: quay.io/jparsai/crdaimagev2:latest
     steps:
       - uses: actions/checkout@v2
       - name: setup-env
         run: |
-          echo 11------------
-          pwd
-          echo 22------------
-          echo ls -l
-          echo 33------------
           pip3 install -r requirements.txt
-
-      - name: crda-report
-        run: crda analyse /__w/test/test/requirements.txt
-
+      - name: crda test
+        uses: jparsai/test@master
+        with:
+          manifest-file-path: /github/workspace/requirements.txt
+          output-file-path: /github/workspace/result.json
+          pkg-installation-directory-path: /__w/test/test
+          image: quay.io/jparsai/crdaimagev2:latest
+        env:
+          CRDA_KEY: ${{ secrets.CRDA_KEY }}
