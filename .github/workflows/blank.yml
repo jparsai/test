@@ -20,7 +20,7 @@ jobs:
           mkdir -p /__w/test/test/site-dir
           ls -l
           pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
-          echo ==========================================
+          echo ========================================
       - name: crda test
         uses: jparsai/test@master
         with:
@@ -33,3 +33,4 @@ jobs:
       - name: check-dir
         run: |
           ls /__w/test/test
+          cat /__w/test/test/result.json
