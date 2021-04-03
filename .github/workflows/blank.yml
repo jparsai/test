@@ -13,6 +13,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: setup-env
         run: |
+          pwd
+          ls -l
           mkdir -p /__w/test/test/site-dir
           pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
       - name: crda-analysis
