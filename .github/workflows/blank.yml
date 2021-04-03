@@ -7,11 +7,11 @@ on:
 
   workflow_dispatch:
 jobs:
-  setup-env:
+  crda-analysis-job:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: setup-env
+      - name: pre-action-setup.yaml
         run: |
           mkdir -p /home/runner/work/test/test/site-dir
           pip3 install --target=/home/runner/work/test/test/site-dir -r requirements.txt --upgrade
@@ -23,6 +23,6 @@ jobs:
           pkg-installation-directory-path: /github/workspace/site-dir/
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
-      - name: check-dir
+      - name: post-action-setup
         run: |
           cat /home/runner/work/test/test/result.json
