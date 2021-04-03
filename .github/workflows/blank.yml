@@ -26,3 +26,4 @@ jobs:
       - name: post-action-setup
         run: |
           cat $GITHUB_WORKSPACE/result.json
+
