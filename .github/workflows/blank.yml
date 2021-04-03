@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: pre-action-setup.yaml
         run: |
+          echo $GITHUB_WORKSPACE
           mkdir -p /home/runner/work/test/test/site-dir
           pip3 install --target=/home/runner/work/test/test/site-dir -r requirements.txt --upgrade
       - name: crda-analysis
