@@ -13,9 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: setup-env
         run: |
-          pwd
-          ls -l
-          mkdir -p /__w/test/test/site-dir
+          mkdir -p /home/runner/work/test/test/site-dir
           pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
       - name: crda-analysis
         uses: jparsai/cdra-analysis/python-3.6@main
@@ -27,4 +25,4 @@ jobs:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
       - name: check-dir
         run: |
-          cat /__w/test/test/result.json
+          cat /home/runner/work/test/test/result.json
