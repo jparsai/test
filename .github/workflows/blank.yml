@@ -18,9 +18,9 @@ jobs:
       - name: crda-analysis
         uses: jparsai/cdra-analysis/python-3.6@main
         with:
-          manifest-file-path: "$GITHUB_WORKSPACE/requirements.txt"
-          output-file-path: "$GITHUB_WORKSPACE/result.json"
-          pkg-installation-directory-path: "$GITHUB_WORKSPACE/site-dir/"
+          manifest-file-path: ($GITHUB_WORKSPACE)/requirements.txt
+          output-file-path: ($GITHUB_WORKSPACE)/result.json
+          pkg-installation-directory-path: ($GITHUB_WORKSPACE)/site-dir/
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
       - name: post-action-setup
