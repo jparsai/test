@@ -16,7 +16,7 @@ jobs:
           mkdir -p /__w/test/test/site-dir
           pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
       - name: crda-analysis
-        uses: jparsai/cdra-analysis/python-3.6@master
+        uses: jparsai/cdra-analysis/python-3.6@main
         with:
           manifest-file-path: /github/workspace/requirements.txt
           output-file-path: /github/workspace/result.json
