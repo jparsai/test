@@ -14,7 +14,7 @@ jobs:
       - name: setup-env
         run: |
           mkdir -p /home/runner/work/test/test/site-dir
-          pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
+          pip3 install --target=/home/runner/work/test/test/site-dir -r requirements.txt --upgrade
       - name: crda-analysis
         uses: jparsai/cdra-analysis/python-3.6@main
         with:
