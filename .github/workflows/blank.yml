@@ -9,28 +9,20 @@ on:
 jobs:
   setup-env:
     runs-on: ubuntu-latest
-    container:
-      image: quay.io/jparsai/crdaimagev2:latest
     steps:
       - uses: actions/checkout@v2
       - name: setup-env
         run: |
-          pwd
-          ls -l
           mkdir -p /__w/test/test/site-dir
-          ls -l
           pip3 install --target=/__w/test/test/site-dir -r requirements.txt --upgrade
-          echo ====================================
-      - name: crda test
-        uses: jparsai/test@master
+      - name: crda-analysis
+        uses: jparsai/cdra-analysis/python-3.6@master
         with:
           manifest-file-path: /github/workspace/requirements.txt
           output-file-path: /github/workspace/result.json
           pkg-installation-directory-path: /github/workspace/site-dir/
-          image: quay.io/jparsai/crdaimagev2:latest
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
       - name: check-dir
         run: |
-          ls /__w/test/test
           cat /__w/test/test/result.json
