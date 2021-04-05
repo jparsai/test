@@ -33,4 +33,3 @@ jobs:
           pwd
           ls -l
           cat $GITHUB_WORKSPACE/result.json
-
