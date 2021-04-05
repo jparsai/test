@@ -16,15 +16,15 @@ jobs:
         run: |
           pwd
           ls -l
-          mkdir -p $GITHUB_WORKSPACE/site-dir
-          pip3 install --target=$GITHUB_WORKSPACE/site-dir -r requirements.txt --upgrade
+          mkdir -p site-dir
+          pip3 install --target=site-dir -r requirements.txt --upgrade
       
       - name: crda-analysis
         uses: jparsai/cdra-analysis/python-3.6@main
         with:
-          manifest-file-path: /github/workspace/requirements.txt
-          output-file-path: /github/workspace/result.json
-          pkg-installation-directory-path: /github/workspace/site-dir/
+          manifest-file-path: requirements.txt
+          output-file-path: result.json
+          pkg-installation-directory-path: site-dir
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
       
@@ -32,4 +32,4 @@ jobs:
         run: |
           pwd
           ls -l
-          cat $GITHUB_WORKSPACE/result.json
+          cat result.json
