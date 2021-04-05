@@ -14,6 +14,8 @@ jobs:
 
       - name: pre-action-setup.yaml
         run: |
+          pwd
+          ls -l
           mkdir -p $GITHUB_WORKSPACE/site-dir
           pip3 install --target=$GITHUB_WORKSPACE/site-dir -r requirements.txt --upgrade
       
@@ -28,5 +30,7 @@ jobs:
       
       - name: post-action-setup
         run: |
+          pwd
+          ls -l
           cat $GITHUB_WORKSPACE/result.json
 
