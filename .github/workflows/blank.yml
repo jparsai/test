@@ -1,35 +1,23 @@
-name: CI
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  workflow_dispatch:
+name: Example workflow using CRDA
+on: push
 jobs:
-  crda-analysis-job:
+  security:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: pre-action-setup.yaml
+      - name: setup
         run: |
-          pwd
-          ls -l
           mkdir -p site-dir
-          pip3 install --target=site-dir -r requirements.txt --upgrade
-      
+          pip3 install --target=site-dir -r requirements.txt      
       - name: crda-analysis
         uses: jparsai/cdra-analysis/python-3.6@main
         with:
           manifest-file-path: requirements.txt
-          output-file-path: result.json
+          output-file-path: crda-analysis-report.json
           pkg-installation-directory-path: site-dir
         env:
           CRDA_KEY: ${{ secrets.CRDA_KEY }}
-      
       - name: post-action-setup
         run: |
-          pwd
-          ls -l
-          cat result.json
+          printf "Report file data:\n"
+          cat crda-analysis-report.json
