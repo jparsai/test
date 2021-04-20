@@ -10,7 +10,7 @@ jobs:
           mkdir -p site-dir
           pip3 install --target=site-dir -r requirements.txt      
       - name: crda-action
-        uses: jparsai/gh-actions@test
+        uses: jparsai/gh-actions/python-3.6@test
         with:
           manifest-file-path: requirements.txt
           output-file-path: crda-analysis-report.json
