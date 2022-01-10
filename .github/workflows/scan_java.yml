@@ -1,0 +1,53 @@
+
+name: Scan Java project
+on: push
+env:
+  PROJECT_DIR: spring-petclinic
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout action
+        uses: actions/checkout@v2
+
+      - name: Clone ${{ env.PROJECT_DIR }}
+        run: |
+          git clone --single-branch --branch crda-modification --depth 1 https://github.com/redhat-actions/${{ env.PROJECT_DIR }}.git
+
+      - name: Copy pom.xml to working directory
+        run: cp ${{ env.PROJECT_DIR }}/pom.xml .
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: temurin
+          java-version: 11
+          cache: maven
+
+      - name: Install CRDA
+        uses: redhat-actions/openshift-tools-installer@v1
+        with:
+          source: github
+          github_pat: ${{ github.token }}
+          crda: "latest"
+
+      - name: CRDA Scan
+        id: scan
+        uses: ./
+        with:
+          manifest_directory: ${{ env.PROJECT_DIR }}
+          manifest_file: ${{ matrix.manifest_file }}
+          crda_key: ${{ secrets.CRDA_KEY }}
+          # snyk_token: ${{ secrets.SNYK_TOKEN }}
+          analysis_report_name: java
+          fail_on: never
+
+      - name: Print JSON analysis report
+        if: ${{ always() && steps.scan.outputs.crda_report_json }}
+        run: cat ${{ steps.scan.outputs.crda_report_json }}
+
+
+      - name: Print Report Link
+        run: echo ${{ steps.scan.outputs.report_link }}
+
