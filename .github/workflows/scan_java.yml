@@ -1,4 +1,3 @@
-
 name: Scan Java project
 on: push
 env:
@@ -39,7 +38,6 @@ jobs:
           manifest_directory: ${{ env.PROJECT_DIR }}
           manifest_file: ${{ matrix.manifest_file }}
           crda_key: ${{ secrets.CRDA_KEY }}
-          # snyk_token: ${{ secrets.SNYK_TOKEN }}
           analysis_report_name: java
           fail_on: never
 
@@ -47,7 +45,5 @@ jobs:
         if: ${{ always() && steps.scan.outputs.crda_report_json }}
         run: cat ${{ steps.scan.outputs.crda_report_json }}
 
-
       - name: Print Report Link
         run: echo ${{ steps.scan.outputs.report_link }}
-
